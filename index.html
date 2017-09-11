@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包函数、箭头函数</title>
+</head>
+<body>
+	<script>
+		// 闭包函数
+	   function fn(){
+	    var num = 10;
+	    return fn1;
+	    function fn1(){
+	        num++;
+	        return num;
+	    }
+	   }
+	   var result = fn()  //fn1
+	   // alert(result);    //返回fn1这个函数
+	   alert(result());   //11
+
+
+		// 箭头函数
+		   var fn = function(a){
+		    return a;
+		   }
+		   var fn = function(){
+		    return 1;
+		   }
+		   // var fn = a => a;       
+		   // // a => a  等价  function(a){return a;}
+		   // var fn = () => 1;
+		   // // () => 1  等价  function(){return 1;}
+		   // var fn = (a,b) => a+b;
+		   // // () => 1  等价  function(a,b){return a+b;}
+		   var fn = (a,b) =>{
+		    alert(a-b);
+		    alert(a+b);
+		    return [a,b];
+		   }
+		   alert(fn(1,2));
+
+	</script>
+</body>
+</html>
